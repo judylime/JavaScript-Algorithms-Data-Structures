@@ -24,7 +24,7 @@ function Stack(){
   Stack.prototype.isEmpty = function () {
     return this .items[this.items.length -1]
   }
-  // 4判断栈是否为空
+  // 4 判断栈是否为空
   Stack.prototype.isEmpty = function () {
     return this.items.length == 0
   }

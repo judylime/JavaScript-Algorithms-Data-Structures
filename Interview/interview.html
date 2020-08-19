@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>
+    General React – React Interview Questions
+    
+     Differentiate between Real DOM and Virtual DOM.
+     DOM aka Document Object Model is an abstraction of structured code (HTML). Dom and HTML code are interrelated as the
+    elements of HTML are known as nodes of DOM. It defines a structure where users modify the content present in the
+    structure in any way they want (create, edit, alter, modify etc.). Basically, HTML is a text, DOM is an in-memory
+    representation of this text. 
+    The virtual DOM (VDOM) is an in-memory representation of Real DOM. The representation of a UI is kept in memory and
+    synced 同步 with the “real” DOM. It’s a step that happens between the render function being called and the displaying of
+    elements on the screen. This entire process is called reconciliation. A virtual DOM is a lightweight JavaScript object
+    which originally is just the copy of the real DOM. It is a node tree that lists the elements, their attributes and
+    content as Objects and their properties. React’s render function creates a node tree out of the React components. It
+    then updates this tree in response to the mutations in the data model which is caused by various actions done by
+    the user or by the system.This Virtual DOM works in three simple steps.
+    Whenever any underlying data changes, the entire UI is re-rendered in Virtual DOM representation.
+    Then the difference between the previous DOM representation and the new one is calculated.
+    
+    Once the calculations are done, the real DOM will be updated with only the things that have actually changed. 
+    
+    Real DOM vs Virtual DOM
+    DOM Manipulation – Real DOM supports a very expensive DOM manipulation. Virtual DOM has an inexpensive DOM manipulation.
+    Element Update – Real DOM creates a new DOM when an element updates. Virtual DOM doesn’t do so in such a case. Instead,
+    it updates the JSX.
+    Memory Wastage – Real DOM causes a lot of memory wastage while there is no memory wastage for Virtual DOM.
+    Update Speed – Real DOM updates slowly. On the other end, the virtual DOM updates faster.
+    Updating HTML – Real DOM can directly update HTML, while virtual DOM can’t update HTML directly.
+    2. What is React?
+    React is a JavaScript-based UI library. It was developed at Facebook with the purpose of creating interactive and
+    reusable UI components.  React is currently one of the most popular JavaScript framework used for handling the
+    presentation layer for the web and mobile apps.
+    3. What are the features of React? 
+    Major features of React are listed below:
+    It uses the virtual DOM instead of the real DOM.
+    It uses server-side rendering.
+    It follows uni-directional data flow or data binding. 单向数据流
+    1）React improves SEO performance React boost the performance of the SEO to higher levels as a search engine faces the
+    problem while reading JavaScript of high loaded applications.
+    2）React acts as a standard for mobile app development
+    3）React makes the process of writing components easier Using React along with JSX will make you write components and
+    code efficiently and clearly.
+    4）React increases efficiency As the React boost促进 the efficiency of components by reusing them. This is the reason why
+    it is considered as an ideal feature of React. It is considered as the most reusable system component.
+    5） React ensures stable code It ensures the stability of the code of an application by making use of downward dataflow.
+    
+    4. List some of the major advantages of React.
+    Excellent for developing complex and interactive web and mobile UI
+    Follows the component-based approach and helps in building reusable UI components
+    Features one of the largest community support
+    Makes use of the virtual DOM instead of the real DOM
+    Relies on server-side rendering
+    Supports unidirectional data flow or data binding
+    Usage of JSX makes easier to read and write code
+    Improves the performance of applications with the use of virtual DOM
+    Provides an easier way to integrate with frameworks
+    It can be shared and rendered both on server and client-side
+    Writing integration and unit tests can be made smother by using tools
+    Q8: Does ReactJS use HTML? No, It uses JSX which is similar to HTML.
+    5. What are the limitations of React?
+    Limitations of React are listed below:
+    React is just a library, not a full-blown framework
+    Its library is very large and takes time to understand
+    It can be little difficult for the novice 新手programmers to understand
+    Coding gets complex as it uses inline templating and JSX
+    How React works?Ans. Below is the sequence of steps which gives an idea about how does react work
+    Firstly the react runs the diffing algorithm算法 to identify the changes that are made in the virtual DOM.
+    Next step is reconciliation, this is used to update the DOM as per the new features.
+    Now, the virtual DOM, which is lightweight in nature and is detached from the specific implementation of the browser.
+    Followingly the ReactElements which are present in virtual DOM are used to build basic nodes.
+    Finally, if the ReactComponent changes the state; the diffing algorithm runs faster and identify the changes. After
+    identification, it automatically updates the DOM with the change difference.
+    
+    6. What is JSX?
+    JSX is a shorthand for JavaScript XML. This is a type of file used by React which utilizes the expressiveness of
+    JavaScript along with HTML like template syntax语法. This makes the HTML file really easy to understand. This file makes
+    applications robust and boosts its performance. Below is an example of JSX:
+    
+    
+    14. How Virtual-DOM is more efficient than Dirty checking?
+     A: First thing to understand here is that in React, each component has a state which is observable. React knows when to
+    re-render the scene情景 because it is able to observe when this data changes. The observables are significantly faster
+    than the Dirty checking because we don’t have to poll 投票the data at a regular interval and check all of the values in
+    the data structure recursively递归的. By comparison, setting a value on the state will signal to a listener that some state
+    has changed. In a situation like that, React can simply listen for change events on the state and queue up
+    re-rendering.  Long story short, the virtual DOM is more efficient than the Dirty checking simply because it prevents
+    all the unnecessary re-renders. Re-rendering only occurs when the state changes.
+    8. Why can’t browsers read JSX?
+    Browsers can only read JavaScript objects but JSX in not a regular JavaScript object. Thus to enable a browser to read
+    JSX, first, we need to transform JSX file into a JavaScript object using JSX transformers like Babel and then pass it to
+    the browser.
+    How many outermost elements can be there in a JSX expression?
+    It must have one JSX element present so that the task can be accomplished easily. Having more than one expression is not
+    an issue but probably it will slow down the process. There are also chances of confusion with more than one expression
+    if you are new to this technology.
+    
+    
+    9. How different is React’s ES6 syntax when compared to ES5?:
+    require vs import
+    export vs exports
+    props
+    
+    state
+    10. How is React different from Angular?
+    React vs Angular
+    
+    11. What do you understand from “In React, everything is a component.”
+    Components are the building blocks of a React application’s UI. These components split up the entire UI into small
+    independent and reusable pieces. Then it renders each of these components independent of each other without affecting
+    the rest of the UI.
+    12. Explain the purpose of render() in React.
+    Each React component must have a render() mandatorily必须. It returns a single React element which is the representation
+    of the native DOM component. If more than one HTML element needs to be rendered, then they must be grouped together
+    inside one enclosing tag such as <form>, <group>,<div> etc. This function must be kept pure i.e., it must return the
+          same result each time it is invoked.
+          14. What is Props?
+          Props is the shorthand for Properties in React. They are read-only components which must be kept pure i.e.
+          immutable. They are always passed down from the parent to the child components throughout the application. A child
+          component can never send a prop back to the parent component. This help in maintaining the unidirectional data
+          flow and are generally used to render the dynamically generated data.
+    
+          13. How can you embed two or more components into one?
+          We can embed components into one in the following way:
+    
+          15. What is a state in React and how is it used?
+          States are the heart of React components. States are the source of data and must be kept as simple as possible.
+          Basically, states are the objects which determine components rendering and behavior. They are mutable unlike the
+          props and create dynamic动态的 and interactive components. They are accessed via this.state()
+          16. Differentiate between states and props.
+          The state is a data structure that starts with a default value when a component mounts. It may be mutated
+          改变的across time, mostly as a result of user events.  Props, on the other hand, are a component’s
+          configuration配置、构造. Think of them as the way for the components to communicate with each other. They are received
+          from the above component and immutable as far as the component receiving them is concerned. A component isn’t able
+          to change its props, but it has to put together the props of its child components. While the props are mostly
+          data, other things can be passed as them as well, for example, callback functions.  Props and state do similar
+          things but are used in different ways. The main difference is that props are immutable不变的 and cannot be changed
+          while the state is used for mutable data or data that will change.
+          States vs Props
+    
+          Changes inside child components are possible with props but not with state
+          Changes inside the component aren’t possible with props but with state
+          Props allow for a parent component to change the value, state doesn’t
+          state是刚开始时默认的数据结构，在组件内被改变 props是组件的配置，不可改变，用于组件之间的互通
+          0. Is setState() async? Why?
+           A: setState() actions are indeed asynchronous. setState() doesn’t immediately mutate this.state. Instead, it
+          creates a pending state transition. Accessing this.state after calling this method can potentially return the
+          existing value. There is no guarantee of synchronous operation of calls to setState and calls may be batched for
+          performance gains.  The reason behind is the way setState alters the state and causes rerendering. Making it
+          synchronous might leave the browser unresponsive. That being said, the setState calls are asynchronous as well as
+          batched for better UI experience and performance. Keep this in mind as this is definitely among the most popular
+          50 interview questions and answers when it comes to React.
+          17. How can you update the state of a component?
+          State of a component can be updated using this.setState().
+    
+          18. What is arrow function in React? How is it used?
+          Arrow functions are more of brief syntax语法 for writing the function expression. They are also called ‘fat arrow‘
+          (=>) the functions. These functions allow to bind the context of the components properly since in ES6 auto binding
+          is not available by default. Arrow functions are mostly useful while working with the higher order functions.
+    
+          19. Differentiate between stateful and stateless components.
+          Stateful vs Stateless
+    
+          20. What are the different phases of React component’s lifecycle?
+          There are three different phases of React component’s lifecycle:
+          Initial Rendering Phase: This is the phase when the component is about to start its life journey and make its way
+          to the DOM.
+          Updating Phase: Once the component gets added to the DOM, it can potentially update and re-render only when a prop
+          or state change occurs. That happens only in this phase.
+          Unmounting Phase: This is the final phase of a component’s life cycle in which the component is destroyed and
+          removed from the DOM.
+    
+          21. Explain the lifecycle methods of React components in detail.
+          componentWillMount() – Executed just before rendering takes place both on the client as well as server-side.
+          componentDidMount() – Executed on the client side only after the first render.
+          componentWillReceiveProps() – Invoked as soon as the props are received from the parent class and before another
+          render is called.
+          shouldComponentUpdate() – Returns true or false value based on certain conditions. If you want your component to
+          update, return true else return false. By default, it returns false.
+          componentWillUpdate() – Called just before rendering takes place in the DOM.
+          componentDidUpdate() – Called immediately after rendering takes place.
+          componentWillUnmount() – Called after the component is unmounted from the DOM. It is used to clear up the memory
+          spaces.
+          22. What is an event in React?
+          In React, events are the triggered触发的 reactions to specific actions like mouse hover, mouse click, key press,
+          etc. Handling these events are similar to handling events in DOM elements. But there are some syntactical
+          语法的differences like:
+          Events are named using camel case instead of just using the lowercase.
+          Events are passed as functions instead of strings.
+          The event argument变量 contains a set of properties, which are specific to an event. Each event type contains its
+          own properties and behavior which can be accessed via its event handler only.
+          23. How do you create an event in React?
+    
+          24. What are synthetic events合成事件 in React?
+          Synthetic events are the objects which act as a cross-browser wrapper around the browser’s native event. They
+          combine the behavior of different browsers into one API. This is done to make sure that the events show consistent
+          properties across different browsers.
+    
+    
+    
+          25. What do you understand by refs in React?
+          Refs is the short hand for References in React. It is an attribute which helps to store a reference to a
+          particular React element or component, which will be returned by the components render configuration配置 function.
+          It is used to return references to a particular element or component returned by render(). They come in handy when
+          we need DOM measurements or to add methods to the components.
+          Refs are an escape hatch安全舱口 which allow you to get direct access to a DOM element or an instance of a component.
+          In order to use them you add a ref attribute to your component whose value is a callback function which will
+          receive the underlying DOM element or the mounted instance of the component as its first argument.
+          class UnControlledForm extends Component {
+          handleSubmit = () => {
+          console.log("Input Value: ", this.input.value) //将获取的input的值输入实例
+          }
+          render () {
+          return (
+          <form onSubmit={this.handleSubmit}>
+            <input type='text' ref={(input)=> this.input = input} /> //从DOM中获取input的值
+            <button type='submit'>Submit</button>
+          </form>
+          )
+          }}
+          Above notice that our input field has a ref attribute whose value is a function. That function receives the actual
+          DOM element of input which we then put on the instance in order to have access to it inside of the handleSubmit
+          function.
+          It’s often misconstrued that you need to use a class component in order to use refs, but refs can also be used
+          with functional components by leveraging closures in JavaScript.
+          26. List some of the cases when you should use Refs.
+          Following are the cases when refs should be used:
+          When you need to manage focus, select text or media playback
+          To trigger imperative animations必要的动画。
+          Integrate with third-party DOM libraries
+          成为一体
+          What is the difference between a controlled component and an uncontrolled component?
+          A controlled component is a component where React is in control and is the single source of truth for the form
+          data. As you can see below, username doesn’t live in the DOM but instead lives in our component state. Whenever we
+          want to update username, we call setState as we’re used to.
+          In HTML, form elements such as <input>, <textarea>, and <select> typically maintain their own state and update it based on user input. When a user submits a form the values from the aforementioned 前面提及的elements are sent with the form. With React it works differently. The component containing the form will keep track of the value of the input in it's state and will re-render the component each time the callback function e.g. onChange is fired as the state will be updated. An input form element whose value is controlled by React in this way is called a controlled component.
+    class ControlledForm extends Component {
+      state = {
+        username: ''
+      }
+      updateUsername = (e) => {
+        this.setState({
+          username: e.target.value,
+        })  }
+      handleSubmit = () => {}
+      render () {
+        return (
+          <form onSubmit={this.handleSubmit}>
+            <input
+              type='text'
+              value={this.state.username}
+              onChange={this.updateUsername} />
+            <button type='submit'>Submit</button>
+          </form>
+        ) }}
+    An uncontrolled component is where your form data is handled by the DOM, instead of inside your React component.You use refs to accomplish this.
+    class UnControlledForm extends Component {
+      input = React.createRef()
+      handleSubmit = () => {
+        console.log("Input Value: ", this.input.current.value)
+      }
+      render () {
+        return (
+          <form onSubmit={this.handleSubmit}>
+            <input
+              type='text'
+              ref={} />
+            <button type='submit'>Submit</button>
+          </form>
+        ) }}
+    There are components in the ReactJS that maintain their own internal state. They are basically considered as uncontrolled components. On the other side, the components which don’t maintain any internal state are considered as controlled components.Though uncontrolled components are typically easier to implement since you just grab the value from the DOM using refs, it’s typically recommended that you favor controlled components over uncontrolled components. The main reasons for this are that controlled components support instant即时 field validation, allow you to conditionally disable/enable buttons, enforce input formats, and are more “the React way”. 
+    
+    
+    
+    22What’s the difference between an Element and a Component in React?A: React element is an object representation of some UI. Basically, it describes what you want to see on the screen. A React component, on the other hand, is a function or a class that optionally accepts input and returns a React element. This is also one of the common interview questions on ReactJS. 
+    21. Explain the difference between functional and class components.
+     A: The components that return React elements as a result are called functional components. They are basically just simple JavaScript functions. They, however, haven’t been around for long还没出现很久. In fact, they have been introduced with React 0.14.  Class components, on the other hand, have been around for quite some time有一段时间了. They use plain Java objects for creating pages. With the React’s create-a-class-factory method, a literal is passed in defining the methods of a new component.
+    32. What are Pure Components?
+    Pure components are the simplest and fastest components which can be written. They can replace any component which only has a render(). These components enhance the simplicity of the code and performance of the application.
+    
+    27. How do you modularize code in React?
+    We can modularize code by using the export and import properties. They help in writing the components separately in different files.
+    
+    
+    28. How are forms created in React?
+    React forms are similar to HTML forms. But in React, the state is contained in the state property of the component and is only updated via setState(). Thus the elements can’t directly update their state and their submission is handled by a JavaScript function. This function has full access to the data that is entered by the user into a form.
+    
+    30. What are Higher Order Components(HOC)?
+    Higher Order Component is an advanced way of reusing the component logic. HOC in React are functions that take and return components. Basically, it’s a pattern that is derived from React’s compositional nature. HOC are custom components which wrap another component within it. They can accept any dynamically动态地 provided child component but they won’t modify or copy any behavior from their input components. They are functions that loop over and apply functions to every element in an array. You can say that HOC are ‘pure’ components.
+    31. What can you do with HOC?
+    Code reuse, logic逻辑 and bootstrap abstraction 引导
+    Render High jacking 渲染劫持
+    State abstraction and manipulation 状态抽象和操纵
+    Props manipulation 道具操纵
+    33. What is the significance重要性 of keys in React?
+    Keys are used for identifying unique Virtual DOM Elements with their corresponding data driving the UI. They help React to optimize优化 the rendering by recycling all the existing elements in the DOM. These keys must be a unique number or string, using which React just reorders the elements instead of re-rendering them. This leads to increase in application’s performance.They allow React to reorder the elements instead of re-rendering them, which increases the app’s performance. 
+    React Redux – React Interview Questions
+    34. What were the major problems with MVC framework?
+    DOM manipulation was very expensive
+    Applications were slow and inefficient
+    There was huge memory wastage
+    Because of circular dependencies, a complicated model was created around models and views
+    35. Explain Flux.
+    Flux is an architectural pattern which enforces the uni-directional data flow. It controls derived导出 data and enables communication between multiple components using a central Store which has authority for all data. Any update in data throughout the application must occur here only. Flux provides stability to the application and reduces run-time errors.
+    
+    This is another one of the common interview questions on React js. You should know that Flux is an application architecture for creating data layers in JavaScript apps. It is neither a framework nor a library, but a type of architecture that complements补足 the concept of Unidirectional Data Flow.
+    Mention the key benefits of Flux?
+    Applications that are built on Flux have components that can simply be tested. By simply updating the store, developers are able to manage and test any react component. It cut down the overall risk of data affection. All the applications are highly scalable可扩展的 and suffer no compatibility issues.
+    
+    
+    36. What is Redux?
+    Redux is one of the hottest libraries for front-end development in today’s marketplace. It is a predictable state container for JavaScript applications and is used for the entire applications state management. Applications developed with Redux are easy to test and can run in different environments showing consistent behavior.
+    The basic idea of Redux is that the entire application state is kept in a single store which is simply a JavaScript object. If you want to change the state, you need to fire actions触发操作 from your application and then write reducers for these actions that modify the state. The entire state transition is kept inside reducers and isn’t supposed to have any side effects.  The general idea behind Redux is that there should be only a single source of truth for your application state, such as the UI state (which tab is active) or the data state (the user profile details).  All of the data is retained in the Redux store. The createStore function is used to create mentioned stores. This function accepts another function as an argument. The passed in function (also known as the reducer) is responsible for returning the state of the application at a certain point in time which is then persisted in the store.
+    1. Explain the components of Redux.
+     A: This is another common Redux React question. You should know that Redux is composed of the following components: 
+    Action — The action is the only source of information that sends data from our application to our store. Actions are sent the store using store.dispatch().
+    Reducer — Reducers specify how the app’s state changes in response to actions sent to the store. Since the actions don’t show the application’s state changes, this place determines how the state will change to an action.
+    Store — The Store is the object that brings Action and Reducer together. The store has the following responsibilities: Holds application state; Allows access to the state via getState(); Allows state to be updated via dispatch(action); Registers listeners via subscribe(listener); Handles unregistering of listeners via the function returned by subscribe (listener).
+     That being said, keep in mind that there is only a single store in a Redux application. When we want to split the data handling logic, we need to use the reducer composition instead of many stores.
+    9. What are the advantages of Redux?
+    Predictability of outcome – With only one source of truth, i.e. the store, there is no confusion about how to sync the current state with actions and other parts of the application.
+    Maintainability – The code becomes easier to maintain with a predictable outcome and strict structure.
+    Server-side rendering – You just need to pass the store created on the server to the client side. Not only is this good for the initial render but it also provides a better user experience as it optimizes the app performance.
+    Developer tools – From actions to state changes, developers can track everything going on in the application in real time.
+    Community and ecosystem – Anyone who has been new to something at some point in life (haven’t we all?) knows the importance of a solid community and its support. Luckily, Redux has a huge community of talented individuals that constantly contribute to the betterment of the library and develop various apps with it.
+    Ease of testing – Redux’s code is easily testable and independent, mostly because the functions are small, pure, and isolated.
+    Organization – Redux is precise about how code should be organized which makes the code more consistent and easier when a team works on it.
+    
+    37. What are the three principles that Redux follows?
+    Single source of truth: The state of the entire application is stored in an object/ state tree within a single store. The single state tree makes it easier to keep track of changes over time and debug or inspect the application.
+    State is read-only: The only way to change the state is to trigger 触发an action. An action is a plain JS object describing the change. Just like state is the minimal representation of data, the action is the minimal representation of the change to that data. 
+    Changes are made with pure functions: In order to specify how the state tree is transformed by actions, you need pure functions. Pure functions are those whose return value depends solely on the values of their arguments.
+    
+    38. What do you understand by “Single source of truth”?
+    Redux uses ‘Store’ for storing the application’s entire state at one place. So all the component’s state are stored in the Store and they receive updates from the Store itself. The single state tree makes it easier to keep track of changes over time and debug or inspect the application.
+    39. List down the components of Redux.
+    Redux is composed of the following components:
+    Action – It’s an object that describes what happened.
+    Reducer –  It is a place to determine how the state will change.
+    Store – State/ Object tree of the entire application is saved in the Store.
+    View – Simply displays the data provided by the Store.
+    40. Show how the data flows through Redux?
+    
+    
+    
+    
+    41. How are Actions defined in Redux?
+    Actions in React must have a type property that indicates the type of ACTION being performed. They must be defined as a String constant and you can add more properties to it as well. In Redux, actions are created using the functions called Action Creators. Below is an example of Action and Action Creator:
+    
+    What is Use of Redux thunk形实转换程序?
+    Ans: Redux thunk acts as middleware which allows an individual to write action creators that return functions instead of actions. This is also used as a delay function in order to delay dispatch of an action if a certain condition is met. The two store methods getState() and dispatch() are provided as parameters to the inner function.
+    
+    
+    42. Explain the role of Reducer.
+    Reducers are pure functions which specify how the application’s state changes in response to an ACTION. Reducers work by taking in the previous state and action, and then it returns a new state. It determines what sort of update needs to be done based on the type of the action, and then returns new values. It returns the previous state as it is, if no work needs to be done.
+    What are pure functional Components?
+    Traditional React Components as we have seen so far are making a class with class Example extends React.Component or React.createClass(). These make stateful components on the off chance that we at any point set the state (i.e. this.setState(), getInitialState(), or this.state = {} inside a constructor()). 
+    In the event that we have no expectation for a Component to require state, or to require lifecycle methods, we can really compose Components with a pure function, consequently the expression "pure function Component":
+    
+    This function that returns a React Element can be used wherever we see fit:
+    
+    You might notice that also takes a prop – we can still pass information into the Component.
+     
+    What are the stateless components?
+    On the off chance极小的机会 that React components are basically state machines that produce UI markup标记, at that point what are stateless segments段，部分? 
+    Stateless components (a kind of "reusable" components) are simply pure functions that render DOM construct exclusively with respect to the properties gave to them. 
+    As you can see, this component has no requirement for any internal state — not to mention a constructor or lifecycle handlers. The yield of the component is absolutely a function of the properties gave to it.
+    43. What is the significance重要性 of Store in Redux?
+    A store is a JavaScript object which can hold the application’s state and provide a few helper methods to access the state, dispatch actions and register listeners. The entire state/ object tree of an application is saved in a single store. As a result of this, Redux is very simple and predictable. We can pass middleware to the store to handle the processing of data as well as to keep a log of various actions that change the state of stores. All the actions return a new state via reducers.
+    44. How is Redux different from Flux?
+    Description of Flux：In the Flux pattern, the Store is the central authority for all data; any mutations to the data must occur within the store. Changes to the Store data are subsequently随后 broadcast传播 to subscribing订阅 Views via events. Views then update themselves based on the new state of received data.  its core purpose is to control derived data so that multiple components can interact with that data without risking pollution.
+    To request changes to any Store data, Actions may be fired触动. These Actions are controlled by a central Dispatcher; Actions may not occur simultaneously同时, ensuring that a Store only mutates data once per Action. The strict unidirectional flow of this Flux pattern enforces data stability, reducing data-related runtime errors throughout an application.
+    
+    Components – React components subscribe to the store in flux whereas in redux, container components utilize connect
+    Dispatcher – There is no dispatcher in redux. On the other hand, flux has a singleton dispatcher
+    Number of Stores –flux has several stores, only a single store for redux
+    State – It is mutable for flux but immutable for redux
+    Store – Influx, the store contains state as well as change logic. Contrary to this, the store in redux is separate from the change logic
+    Store Type – All stores in flux are disconnected and flat. This is not the case with redux, where there is a single store with hierarchical reducers
+    
+    React Router – React Interview Questions
+    46. What is React Router?
+    React Router is a powerful routing library built on top of React, which helps in adding new screens and flows to the application. This keeps the URL in sync with data that’s being displayed on the web page. It maintains a standardized structure and behavior and is used for developing single page web applications. React Router has a simple API.
+    47. Why is switch keyword used in React Router v4?
+    Although a <div> is used to encapsulate压缩 multiple routes inside the Router. The ‘switch’ keyword is used when you want to display only a single route to be rendered amongst the several defined routes. 
+    The <switch> tag when in use matches the typed URL with the defined routes in sequential顺序的 order. When the first match is found, it renders the specified route. Thereby bypassing绕过 the remaining routes.
+    
+    
+    48. Why do we need a Router in React?
+    A Router is used to define multiple routes and when a user types a specific URL, if this URL matches the path of any ‘route’ defined inside the router, then the user is redirected to that particular route. So basically, we need to add a Router library to our app that allows creating multiple routes with each leading to us a unique view.
+    
+    49. List down the advantages of React Router.
+    Just like how React is based on components, in React Router v4, the API is ‘All About Components’. A Router can be visualized as a single root component (<BrowserRouter>) in which we enclose the specific child routes (<route>).
+    No need to manually set History value: In React Router v4, all we need to do is wrap our routes within the <BrowserRouter> component.
+    The packages are split: Three packages one each for Web, Native and Core. This supports the compact size of our application. It is easy to switch over based on a similar coding style.
+    
+    Question: How does the React Router differ from conventional routing?
+    Changes in the URL – A HTTP request is sent to a server for receiving a corresponding HTML page in conventional routing. React routing necessitates only for a change in the History attribute.
+    Navigation – In conventional routing, the user actually navigates across different web pages for each individual view. In React routing, however, the users feel like they are navigating across distinct webpages while in actuality they aren’t.
+    Pages – Whereas in React routing only a single HTML page is involved, each view corresponds to a new file in conventional routing.
+    
+    What are React Hooks? What are React Hooks?
+    Hooks are a new addition in React 16.8. They let you use state and other React features without writing a class. With Hooks, you can extract stateful logic from a component so it can be tested independently and reused. Hooks allow you to reuse stateful logic without changing your component hierarchy层次结构. This makes it easy to share Hooks among many components or with the community. 
+    What are advantages of using React Hooks? What are advantages of using React Hooks?
+    Primarily, hooks in general enable the extraction提取 and reuse of stateful logic that is common across multiple components without the burden负担 of higher order components or render props. Hooks allow to easily manipulate the state of our functional component without needing to convert them into class components.
+    Hooks don’t work inside classes (because they let you use React without classes). By using them, we can totally avoid using lifecycle methods, such as componentDidMount, componentDidUpdate, componentWillUnmount. Instead, we will use built-in hooks like useEffect .
+    What is useState() in React? 
+    ...
+    const [count, setCounter] = useState(0);
+    const [moreStuff, setMoreStuff] = useState(...);
+    ...
+    
+    const setCount = () => {
+        setCounter(count + 1);
+        setMoreStuff(...);
+        ...
+    };
+    useState is one of build-in react hooks. useState(0) returns a tuple元组，重数 where the first parameter count is the current state of the counter and setCounter is the method that will allow us to update the counter's state.
+    We can use the setCounter method to update the state of count anywhere - In this case we are using it inside of the setCount function where we can do more things; the idea with hooks is that we are able to keep our code more functional and avoid class based components if not desired/needed.
+    
+    What is prop drilling钻孔 and how can you avoid it? 
+    When building a React application, there is often the need for a deeply nested嵌套的 component to use data provided by another component that is much higher in the hierarchy层次. The simplest approach is to simply pass a prop from each component to the next in the hierarchy from the source component to the deeply nested component. This is called prop drilling.
+    The primary disadvantage of prop drilling is that components that should not otherwise be aware of the data become unnecessarily complicated and are harder to maintain.
+    To avoid prop drilling, a common approach is to use React context. This allows a Provider component that supplies data to be defined, and allows nested components to consume context data via either a Consumer component or a useContext hook.
+    What happens during the lifecycle of a React component?
+    High-Level Component Lifecycle
+    At the highest level, React components have lifecycle events that fall into three general categories:
+    Initialization
+    State/Property Updates
+    Destruction
+    Every React component defines these events as a mechanism机械装置 for managing its properties, state, and rendered output. Some of these events only happen once, others happen more frequently; understanding these three general categories should help you clearly visualize when certain logic needs to be applied.For example, a component may need to add event listeners to the DOM when it first mounts. However, it should probably remove those event listeners when the component unmounts from the DOM so that irrelevant processing does not occur.
+    class MyComponent extends React.Component {
+      componentDidMount() { // when the component is added to the DOM...
+        window.addEventListener('resize', this.onResizeHandler);
+      }
+      componentWillUnmount(){// when the component is removed from DOM...
+        window.removeEventListener('resize', this.onResizeHandler);
+      }
+      onResizeHandler() {
+        console.log('The window has been resized!');
+      }}
+    Low-Level Component Lifecycle
+    
+    Within these three general buckets桶 exist a number of specific lifecycle hooks — essentially本质上 abstract抽象的 methods — that can be utilized by any React component to more accurately manage updates. Understanding how and when these hooks fire is key to building stable components and will enable you to control the rendering process (improving performance).
+    Take a look at the diagram图解 above. The events under “Initialization” only happen when a component is first initialized or added to the DOM. Similarly, the events under “Destruction”毁坏 only happen once (when the component is removed from the DOM). However, the events under “Update” happen every time the properties or state of the component change.
+    class MyComponent extends React.Component {
+      // only re-render if the ID has changed!
+      shouldComponentUpdate(nextProps, nextState) {
+        return nextProps.id === this.props.id;
+      }
+    }
+    Question #3: What can you tell me about JSX?
+    When Facebook first released React to the world, they also introduced a new dialect方言 of JavaScript called JSX that embeds使嵌入 raw HTML templates inside JavaScript code. JSX code by itself cannot be read by the browser; it must be transpiled into traditional JavaScript using tools like Babel and webpack. While many developers understandably have initial knee-jerk下意识的 reactions against it, JSX (in tandem with ES2015) has become the method of defining React components.
+    class MyComponent extends React.Component {
+      render() {
+        let props = this.props;
+        return (
+          <div className="my-component">
+            <a href={props.url}>{props.name}</a>
+          </div>
+        );
+      }
+    }
+    This is certainly true. Having said that, many React developers prefer to use JSX as its syntax语法 is far more declarative说明的 and reduces overall code complexity.
+    import AnotherClass from './AnotherClass';
+    class MyComponent extends React.Component {
+      render() {
+        let props = this.props;
+        return (
+          <div className="my-component">
+            <AnotherClass {...props} />
+          </div>
+        );
+      }
+    Flux vs MVC
+    Traditional MVC patterns have worked well for separating the concerns of data (Model), UI (View) and logic (Controller) — but many web developers have discovered limitations with that approach as applications grow in size. Specifically, MVC architectures frequently encounter two main problems:
+    Poorly defined data flow: The cascading串联，大量落下 updates which occur across views often lead to a tangled复杂的 web of events which is difficult to debug.
+    Lack of data integrity: Model data can be mutated from anywhere, yielding unpredictable results across the UI.
+    Question #5: What are stateless components?
+    Stateless components (a flavor of “reusable” components) are nothing more than pure functions that render DOM based solely on the properties provided to them.
+    const StatelessCmp = props => {
+      return (
+        <div className="my-stateless-component">
+          {props.name}: {props.birthday}
+        </div>
+      );};
+    ReactDOM.render(
+      <StatelessCmp name="Art" birthday="10/01/1980" />,
+      document.getElementById('main'));
+    This component has no need for any internal state — let alone a constructor or lifecycle handlers. The output of the component is purely a function of the properties provided to it.
+    Bonus Question: Explain this Code
+    class MyComponent extends React.Component {
+      constructor(props) {
+        // set the default internal state
+        this.state = {
+          clicks: 0
+        };
+      }
+      componentDidMount() {
+        this.refs.myComponentDiv.addEventListener('click', this.clickHandler);
+      }
+      componentWillUnmount() {
+        this.refs.myComponentDiv.removeEventListener('click', this.clickHandler);
+      }
+      clickHandler() {
+        this.setState({
+          clicks: this.clicks + 1
+        });
+      }
+      render() {
+        let children = this.props.children;
+    
+        return (
+          <div className="my-component" ref="myComponentDiv">
+            <h2>My Component ({this.state.clicks} clicks})</h2>
+            <h3>{this.props.headerText}</h3>
+            {children}
+          </div>
+        );
+      }
+    }
+    Given the code defined above, can you identify two problems?
+    The constructor does not pass its props to the super class. It should include the following line:
+    constructor(props) {
+            super(props);
+            // ...
+        }
+    The event listener (when assigned via addEventListener()) is not properly scoped because ES2015 doesn’t provide autobinding. Therefore the developer can re-assign clickHandler in the constructor to include the correct binding to this:
+    constructor(props) {
+            super(props);
+                  this.clickHandler = this.clickHandler.bind(this);
+            // ...
+        }
+    Can you explain what the output of this class actually does? How would you use it in an application?
+    This class creates a <div /> element and attaches a click listener to it. The content of this component includes a <h2 /> element that updates every time the user clicks on the parent <div />, as well as an <h3 /> element containing a provided title and whatever child elements were passed to it. To use this class, the candidate should import it into another class and use it like this:
+    <MyComponent headerText="A list of paragraph tags">
+        <p>First child.</p>
+        <p>Any other <span>number</span> of children...</p>
+    </MyComponent>
+    5. What is the difference between createElement and cloneElement?
+    Basically, createElement what React uses to create React Elements, cloneElement, on the other hand, is used to clone an element and pass it new props.
+    createElement is what JSX gets compiled to and is what React uses to create React Elements (object representations of some UI). cloneElement is used to clone an element and pass it new props. They nailed the naming on these two 🙂.
+    
+    
+    
+    
+    What is equivalent of the following using React.createElement? 
+    const element = (
+      <h1 className="greeting">
+        Hello, world!
+      </h1>
+    );
+    Answer:
+    const element = React.createElement(
+      'h1',
+      {className: 'greeting'},
+      'Hello, world!'
+    );
+    Why should not we update the state directly? Why should not we update the state directly?
+    If you try to update state directly then it won’t re-render the component.
+        //Wrong   This.state.message =”Hello world”;
+    Instead use setState() method. It schedules an update to a component’s state object. When state changes, the component responds by re-rendering
+        //Correct    This.setState({message: ‘Hello World’});
+    34. What are synthetic综合的 events in React?
+     A: When talking about React js interview questions and answers, we should mention the synthetic events. They act as a cross-browser wrapper around the browser’s native event thus combining the behavior of different browsers into one API. Their purpose is to ensure that the events show consistent properties across different browsers. 
+    Question: How would you create a form in React?
+    React forms are identical to HTML forms. However, the state is contained in the state property of the component in React and is updateable only via the setState() method.
+    Therefore, the elements in a React form can’t directly update their state. Their submission is handled by a JS function, which has full access to the data entered into the form by a user.
+    handleSubmit(event) {
+    alert('A name was submitted: ' + this.state.value);
+    event.preventDefault();
+    }
+    render() {
+    return (
+    );
+    }
+    Question: Where would you put AJAX calls in your React code?
+    Answer: It is possible to use any AJAX library with React, such as Axios, jQuery AJAX, as well as the inbuilt browser window.fetch.
+    Data with AJAX calls need to be added to the componentDidMount() lifecycle method. By doing this, it is possible to use the setState() method for updating component as soon as the data is retrieved.
+    Question: Can browsers read JSX?
+    Answer: No, the browsers cannot read JSX because it is not a regular JavaScript object.
+    Question: Can we modularize code in React? How?
+    Answer: Yes, we can modularize code in React. It can be done by using export and import properties.
+    What’s the difference between an Element and a Component in React?
+    Simply put, a React element describes what you want to see on the screen. Not so simply put, a React element is an object representation of some UI.
+    A React component is a function or a class which optionally accepts input and returns a React element (typically via JSX which gets compiled to a createElement invocation).
+    In which lifecycle method do you make AJAX requests with a Class component?
+    AJAX requests should go in the componentDidMount lifecycle method.
+    The reason for this is because you can’t guarantee the AJAX request won’t resolve before the component mounts. If it did, that would mean that you’d be trying to setState on an unmounted component, which not only won’t work but React will yell at you for. Doing AJAX in componentDidMount will guarantee that there’s a component to update.
+    In ReactJS, why there is a need to capitalize on the components?
+    It is necessary because components are not the DOM element but they are constructors构造函数. If they are not capitalized, they can cause various issues and can confuse developers with several elements. At the same time, the problem of integration of some elements and commands can be there.
+  </p>
+</body>
+</html>
