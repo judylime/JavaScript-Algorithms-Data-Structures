@@ -10,6 +10,7 @@ function maxSubarraySum(arr, num) {
     }
     if (temp > max) {
       max = temp;
+      //console.log(temp,max)
     }
   }
   return max;
